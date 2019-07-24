@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-puzzle",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "vue cli plugin to add some config of work",
   "main": "index.js",
   "author": "Johnny",
