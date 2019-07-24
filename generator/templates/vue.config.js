@@ -1,7 +1,4 @@
 const path = require('path')
-// const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
-
-// const loading = true
 
 module.exports = {
   publicPath: process.env.VUE_APP_CDN,
@@ -50,18 +47,5 @@ module.exports = {
         disable: true
       })
       .end()
-  },
-  // configureWebpack: config => {
-  //   loading && config.plugins.push(
-  //     new SkeletonWebpackPlugin({
-  //       webpackConfig: {
-  //         entry: {
-  //           app: path.join(__dirname, './src/skeleton.js')
-  //         }
-  //       },
-  //       minimize: true,
-  //       quiet: true
-  //     })
-  //   )
-  // }
+  }
 }

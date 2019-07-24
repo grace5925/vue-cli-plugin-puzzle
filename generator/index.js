@@ -12,15 +12,15 @@ module.exports = (api, opts, rootOptions) => {
   })
 
   api.render({
-    './.vscode/settings.json': './templates/.vscode/settings.json',
+    './.vscode/settings.json': './templates/_vscode/settings.json',
     './public/index.html': './templates/public/index.html',
-    './src/assets/scss/_variables.scss': './templates/src/assets/scss/_variables.scss',
+    './src/assets/scss/_variables.scss': './templates/src/assets/scss/__variables.scss',
     './src/App.vue': './templates/src/App.vue',
-    './.env.development': './templates/.env.development',
-    './.env.production': './templates/.env.production',
-    './.env.staging': './templates/.env.staging',
-    './.gitignore': './templates/.gitignore',
-    './.yarnrc': './templates/.yarnrc',
+    './.env.development': './templates/_env.development',
+    './.env.production': './templates/_env.production',
+    './.env.staging': './templates/_env.staging',
+    './.gitignore': './templates/_gitignore',
+    './.yarnrc': './templates/_yarnrc',
     './vue.config.js': './templates/vue.config.js'
   })
 }
