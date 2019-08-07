@@ -26,7 +26,7 @@ module.exports = (api, opts, rootOptions) => {
   })
 
   api.onCreateComplete(() => {
-    
+
     utils.updateEnv()
 
     utils.updateVueConfig()
@@ -54,6 +54,8 @@ module.exports = (api, opts, rootOptions) => {
       }
       return config
     })
+
+    utils.updateHtml(rootOptions.projectName)
     
   })
 }
