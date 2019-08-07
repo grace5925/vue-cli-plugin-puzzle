@@ -36,6 +36,7 @@ module.exports = api => {
 
       const rcPath = api.resolve('./babel.config.js')
       const pkgPath = api.resolve('./package.json')
+
       if (fs.existsSync(rcPath)) {
         configPath = rcPath
         config = callback(require(rcPath))
@@ -53,6 +54,41 @@ module.exports = api => {
           { encoding: 'utf8' }
         )
       }
+    },
+
+    updateEnv () {
+      const development = {
+        path: api.resolve('./.env.development'),
+        content: `VUE_APP_API=http://localhost:3000/\nVUE_APP_DEBUG=true`
+      }
+      const staging = {
+        path: api.resolve('./.env.staging'),
+        content: `NODE_ENV=production\nVUE_APP_CDN=''\nVUE_APP_DEBUG=true`
+      }
+      const production = {
+        path: api.resolve('./.env.production'),
+        content: `VUE_APP_API=/\nVUE_APP_CDN=https://a05.xxx.com/\nVUE_APP_DEBUG=false`
+      }
+
+      fs.writeFileSync(
+        development.path,
+        development.content,
+        { encoding: 'utf8' }
+      )
+
+      fs.writeFileSync(
+        staging.path,
+        staging.content,
+        { encoding: 'utf8' }
+      )
+
+      fs.writeFileSync(
+        production.path,
+        production.content,
+        { encoding: 'utf8' }
+      )
+    },
+
     }
   }
 }

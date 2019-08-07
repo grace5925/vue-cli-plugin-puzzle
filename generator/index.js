@@ -20,9 +20,6 @@ module.exports = (api, opts, rootOptions) => {
   api.render({
     './.vscode/settings.json': './templates/_vscode/settings.json',
     './public/index.html': './templates/public/index.html',
-    './.env.development': './templates/_env.development',
-    './.env.production': './templates/_env.production',
-    './.env.staging': './templates/_env.staging',
     './.gitignore': './templates/_gitignore',
     './.yarnrc': './templates/_yarnrc',
     './vue.config.js': './templates/vue.config.js',
@@ -30,6 +27,8 @@ module.exports = (api, opts, rootOptions) => {
   })
 
   api.onCreateComplete(() => {
+
+    utils.updateEnv()
 
     utils.updatePostcss(config => {
       const postcssPxToViewport = {
