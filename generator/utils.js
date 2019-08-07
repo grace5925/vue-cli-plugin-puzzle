@@ -87,6 +87,16 @@ module.exports = api => {
         production.content,
         { encoding: 'utf8' }
       )
+    },
+
+    updateVueConfig () {
+      const filePath = api.resolve('./node_modules/vue-cli-plugin-puzzle/configs.js')
+      const content = fs.readFileSync(filePath, { encoding: 'utf8' })
+      fs.writeFileSync(
+        api.resolve('./vue.config.js'),
+        content,
+        { encoding: 'utf8' }
+      )
     }
   }
 }
