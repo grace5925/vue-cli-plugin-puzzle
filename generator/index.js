@@ -22,13 +22,14 @@ module.exports = (api, opts, rootOptions) => {
     './public/index.html': './templates/public/index.html',
     './.gitignore': './templates/_gitignore',
     './.yarnrc': './templates/_yarnrc',
-    './vue.config.js': './templates/vue.config.js',
     './src/main.js': './templates/src/main.js'
   })
 
   api.onCreateComplete(() => {
 
     utils.updateEnv()
+
+    utils.updateVueConfig()
 
     utils.updatePostcss(config => {
       const postcssPxToViewport = {
@@ -53,6 +54,8 @@ module.exports = (api, opts, rootOptions) => {
       }
       return config
     })
+
+    utils.updateHtml(rootOptions.projectName)
     
   })
 }
