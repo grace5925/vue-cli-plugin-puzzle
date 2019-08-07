@@ -26,7 +26,34 @@ module.exports = (api, opts, rootOptions) => {
     './.gitignore': './templates/_gitignore',
     './.yarnrc': './templates/_yarnrc',
     './vue.config.js': './templates/vue.config.js',
-    './postcss.config.js': './templates/postcss.config.js',
     './src/main.js': './templates/src/main.js'
+  })
+
+  api.onCreateComplete(() => {
+
+    utils.updatePostcss(config => {
+      const postcssPxToViewport = {
+        viewportWidth: 750,
+        unitPrecision: 3,
+        viewportUnit: 'vw',
+        selectorBlackList: ['.ignore'],
+        minPixelValue: 1,
+        mediaQuery: false
+      }
+      const cssnano = {
+        preset: 'advanced',
+        autoprefixer: false,
+        'postcss-zindex': false
+      }
+
+      config.plugins = {
+        'postcss-cssnext': {},
+        'postcss-viewport-units': {},
+        'postcss-px-to-viewport': postcssPxToViewport,
+        cssnano
+      }
+      return config
+    })
+    
   })
 }
