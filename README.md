@@ -6,7 +6,7 @@ Vue CLI 3 plugin to add some configurations to your Vue Project for Puzzle-idea'
 
 - 简单的图片压缩
 - 发布与预发布环境分离
-- 对rem和vw的支持（基于sass，基于750宽设计稿，通过`vw(设计稿尺寸)`，自动换算vw）
+- 基于750宽设计稿，通过`vw(设计稿尺寸)`，自动换算vw
 
 ## :rocket: Getting Started
 
