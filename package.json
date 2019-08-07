@@ -9,5 +9,6 @@
     "type": "git",
     "url": "https://github.com/grace5925/vue-cli-plugin-puzzle.git"
   },
+  "keywords": ["vue", "vue-cli"],
   "homepage": "https://github.com/grace5925/vue-cli-plugin-puzzle.git#readme"
 }
