@@ -22,8 +22,10 @@ module.exports = (api, opts, rootOptions) => {
     './public/index.html': './templates/public/index.html',
     './.gitignore': './templates/_gitignore',
     './.yarnrc': './templates/_yarnrc',
-    './src/main.js': './templates/src/main.js'
+    './src/plugins/postcss.js': './templates/src/plugins/postcss.js'
   })
+
+  api.injectImports(utils.getMain(), `import './plugins/postcss.js'`)
 
   api.onCreateComplete(() => {
 
