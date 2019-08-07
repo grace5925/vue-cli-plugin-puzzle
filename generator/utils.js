@@ -87,8 +87,6 @@ module.exports = api => {
         production.content,
         { encoding: 'utf8' }
       )
-    },
-
     }
   }
 }
