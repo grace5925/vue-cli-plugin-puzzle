@@ -104,7 +104,7 @@ module.exports = api => {
       const filePath = api.resolve('./public/index.html')
       const htmlTxt = fs.readFileSync(filePath, { encoding: 'utf8' })
       let newHtml = htmlTxt.replace(/<title>([\s\S]){1,}<\/title>/gm, `<title> ${title} </title>`)
-      console.log(newHtml)
+
       fs.writeFileSync(
         filePath,
         newHtml,
