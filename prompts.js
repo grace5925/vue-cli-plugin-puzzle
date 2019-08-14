@@ -2,7 +2,7 @@ module.exports = [
   {
     type: 'list',
     name: 'compress',
-    message: '是否开启图片压缩？（依赖安装速度可能比较慢）',
+    message: '是否开启图片压缩（依赖安装速度可能比较慢）',
     choices: [
       { name: '是', value: true },
       { name: '否', value: false }
