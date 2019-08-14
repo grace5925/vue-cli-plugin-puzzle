@@ -24,7 +24,6 @@ module.exports = (api, opts, rootOptions) => {
     './.vscode/settings.json': './templates/_vscode/settings.json',
     './public/index.html': './templates/public/index.html',
     './.gitignore': './templates/_gitignore',
-    './.yarnrc': './templates/_yarnrc',
     './src/plugins/postcss.js': './templates/src/plugins/postcss.js',
     './vue.config.js': './templates/vue.config.js'
   })
