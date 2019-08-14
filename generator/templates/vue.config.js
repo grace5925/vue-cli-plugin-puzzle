@@ -28,6 +28,7 @@ module.exports = {
         })
         return args
       })
+    <%_ if (options.compress) { _%>
     config.module
       .rule('images')
       .use('image-webpack-loader')
@@ -36,5 +37,6 @@ module.exports = {
         disable: true
       })
       .end()
+    <%_ } _%>
   }
 }

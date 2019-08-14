@@ -1,20 +1,23 @@
 module.exports = (api, opts, rootOptions) => {
   const utils = require('./utils')(api)
+  const devDependencies = {
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-viewport-units": "^0.1.6",
+    "viewport-units-buggyfill": "^0.6.2"
+  }
+  if (opts.compress) Object.assign(devDependencies, {
+    "image-webpack-loader": "^5.0.0"
+  })
 
   api.extendPackage({
     scripts: {
       "build:test": "vue-cli-service build --dest a04 --mode staging",
       "lint": "vue-cli-service lint --fix"
     },
-    devDependencies: {
-      "cssnano": "^4.1.10",
-      "cssnano-preset-advanced": "^4.0.7",
-      "postcss-cssnext": "^3.1.0",
-      "postcss-px-to-viewport": "^1.1.1",
-      "postcss-viewport-units": "^0.1.6",
-      "viewport-units-buggyfill": "^0.6.2",
-      "image-webpack-loader": "^5.0.0"
-    }
+    devDependencies
   })
 
   api.render({
@@ -22,7 +25,8 @@ module.exports = (api, opts, rootOptions) => {
     './public/index.html': './templates/public/index.html',
     './.gitignore': './templates/_gitignore',
     './.yarnrc': './templates/_yarnrc',
-    './src/plugins/postcss.js': './templates/src/plugins/postcss.js'
+    './src/plugins/postcss.js': './templates/src/plugins/postcss.js',
+    './vue.config.js': './templates/vue.config.js'
   })
 
   api.injectImports(utils.getMain(), `import './plugins/postcss.js'`)
@@ -30,8 +34,6 @@ module.exports = (api, opts, rootOptions) => {
   api.onCreateComplete(() => {
 
     utils.updateEnv()
-
-    utils.updateVueConfig()
 
     utils.updatePostcss(config => {
       const postcssPxToViewport = {

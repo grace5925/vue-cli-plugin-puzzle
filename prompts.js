@@ -1,14 +1,14 @@
 module.exports = [
-  // {
-  //   type: 'list',
-  //   name: 'SPA',
-  //   message: '单页 or 多页?',
-  //   choices: [
-  //     { name: 'Fully import', value: 'pages' },
-  //     { name: 'Import on demand', value: 'single' }
-  //   ],
-  //   default: 'single',
-  // },
+  {
+    type: 'list',
+    name: 'compress',
+    message: '是否开启图片压缩？（依赖安装速度可能比较慢）',
+    choices: [
+      { name: '是', value: true },
+      { name: '否', value: false }
+    ],
+    default: false
+  }
   // {
   //   when: answers => answers.SPA === 'pages',
   //   type: 'confirm',
