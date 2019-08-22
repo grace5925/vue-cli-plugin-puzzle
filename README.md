@@ -71,6 +71,7 @@ yarn build
 ## :white_check_mark: TODO
 
 - [ ] 增加对多页的支持
+- [ ] 增加对网络请求的支持
 
 ## :copyright: License
 
