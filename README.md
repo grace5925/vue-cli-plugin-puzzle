@@ -25,7 +25,7 @@ vue add puzzle
 
 ## :hammer: 内置命令
 
-- 非语法性代码检查（自动修复）
+- 非逻辑性代码检查（自动修复）
   
 ```sh
 npm run lint
