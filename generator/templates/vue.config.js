@@ -4,7 +4,6 @@ module.exports = {
   productionSourceMap: false,
   transpileDependencies: [],
   css: {
-    modules: false,
     sourceMap: false
   },
   chainWebpack: config => {

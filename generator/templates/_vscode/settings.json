@@ -9,5 +9,12 @@
     }
   ],
   "editor.tabSize": 2,
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "cSpell.enabledLanguageIds": ["markdown", "plaintext", "text", "yml"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
